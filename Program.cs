@@ -88,7 +88,7 @@ namespace SRO_TextDataString
                             string str, kor, yyy, zzz, chn, twn, jpn;
                             string eng, vnm, tha, rus, tur, esp, egy, deu;
 
-                            if (_mediapk2Path.Contains("_VN"))
+                            if (_mediapk2Path.Contains("_VN_3JOB"))
                             {
                                 str = rawCol[01];
                                 errorAt = str;
@@ -157,7 +157,7 @@ namespace SRO_TextDataString
                                 {
                                     cmd = new SqlCommand($"UPDATE [_{filein}] SET [JP] = N'{jpn}' WHERE [NameStrID128] = '{str}'", conn);
                                 }
-                                if (_mediapk2Path.Contains("_VN"))
+                                if (_mediapk2Path.Contains("_VN") || _mediapk2Path.Contains("_VN_3JOB"))
                                 {
                                     cmd = new SqlCommand($"UPDATE [_{filein}] SET [VN] = N'{vnm}' WHERE [NameStrID128] = '{str}'", conn);
                                 }
