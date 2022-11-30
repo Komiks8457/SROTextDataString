@@ -46,7 +46,7 @@ namespace SRO_TextDataString
                         Console.WriteLine("{0}", $"{fileIn.ToLower()}.txt");
                         foreach (var file in _mediapk2Reader.GetFileText($"{fileIn}.txt").Split(new[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries))
                         {
-                            ReadLineToDatabase(_mediapk2Path.Contains("_VN") ? file : _mediapk2Reader.GetFileText(file), fileIn);
+                            ReadLineToDatabase(_mediapk2Path.Contains("_VN_3JOB") ? file : _mediapk2Reader.GetFileText(file), fileIn);
                         }
                     }
                 }
@@ -157,7 +157,7 @@ namespace SRO_TextDataString
                                 {
                                     cmd = new SqlCommand($"UPDATE [_{filein}] SET [JP] = N'{jpn}' WHERE [NameStrID128] = '{str}'", conn);
                                 }
-                                if (_mediapk2Path.Contains("_VN") || _mediapk2Path.Contains("_VN_3JOB"))
+                                if (_mediapk2Path.Contains("_VN"))
                                 {
                                     cmd = new SqlCommand($"UPDATE [_{filein}] SET [VN] = N'{vnm}' WHERE [NameStrID128] = '{str}'", conn);
                                 }
